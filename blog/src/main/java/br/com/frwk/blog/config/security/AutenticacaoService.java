@@ -10,7 +10,9 @@ import org.springframework.stereotype.Service;
 
 import br.com.frwk.blog.modelo.Usuario;
 import br.com.frwk.blog.repository.UsuarioRepository;
-
+/**
+ * @author CleberLeão
+ */
 @Service
 public class AutenticacaoService implements UserDetailsService {
 	@Autowired
@@ -18,13 +20,12 @@ public class AutenticacaoService implements UserDetailsService {
 
 	public AutenticacaoService() {
 	}
-
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Optional<Usuario> usuario = this.repository.findByEmail(username);
+		Optional<Usuario> usuario = repository.findByEmail(username);
 		if (usuario.isPresent()) {
-			return (UserDetails)usuario.get();
-		} else {
-			throw new UsernameNotFoundException("Dados de usuário e senha são inválidos!");
+			return usuario.get();
 		}
+			throw new UsernameNotFoundException("Dados de usuário e senha são inválidos!");
 	}
 }

@@ -2,7 +2,9 @@ package br.com.frwk.blog.controller.form;
 
 import br.com.frwk.blog.modelo.Usuario;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-
+/**
+ * @author CleberLeão
+ */
 public class UsuarioForm {
     private String email;
     private String senha;

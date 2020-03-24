@@ -6,7 +6,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import org.springframework.security.core.GrantedAuthority;
-
+/**
+ * @author CleberLeão
+ */
 @Entity
 public class Perfil implements GrantedAuthority {
 	

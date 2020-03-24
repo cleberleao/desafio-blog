@@ -26,7 +26,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
-
+/**
+ * @author CleberLeão
+ */
 @CrossOrigin({"*"})
 @RestController
 @RequestMapping({"/topicos"})
@@ -54,10 +56,7 @@ public class TopicosController {
 
 	@PostMapping
 	@Transactional
-	@CacheEvict(
-			value = {"listaDeTopicos"},
-			allEntries = true
-	)
+	@CacheEvict(value = {"listaDeTopicos"},	allEntries = true)
 	public ResponseEntity<TopicoDto> cadastrar(@RequestBody @Valid TopicoForm form, UriComponentsBuilder uriBuilder) {
 		Topico topico = form.converter(this.postRepository);
 		this.topicoRepository.save(topico);
@@ -73,10 +72,7 @@ public class TopicosController {
 
 	@PutMapping({"/{id}"})
 	@Transactional
-	@CacheEvict(
-			value = {"listaDeTopicos"},
-			allEntries = true
-	)
+	@CacheEvict(value = {"listaDeTopicos"},	allEntries = true)
 	public ResponseEntity<TopicoDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoTopicoForm form) {
 		Optional<Topico> optional = this.topicoRepository.findById(id);
 		if (optional.isPresent()) {
@@ -89,10 +85,7 @@ public class TopicosController {
 
 	@DeleteMapping({"/{id}"})
 	@Transactional
-	@CacheEvict(
-			value = {"listaDeTopicos"},
-			allEntries = true
-	)
+	@CacheEvict(value = {"listaDeTopicos"},	allEntries = true)
 	public ResponseEntity<?> remover(@PathVariable Long id) {
 		Optional<Topico> optional = this.topicoRepository.findById(id);
 		if (optional.isPresent()) {

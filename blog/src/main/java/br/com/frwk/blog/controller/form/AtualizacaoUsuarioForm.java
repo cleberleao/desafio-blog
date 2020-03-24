@@ -7,25 +7,21 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-
+/**
+ * @author CleberLeão
+ */
 public class AtualizacaoUsuarioForm {
     @NotNull
     @NotEmpty
-    @Length(
-            min = 3
-    )
+    @Length(min = 3)
     private String nome;
     @NotNull
     @NotEmpty
-    @Length(
-            min = 5
-    )
+    @Length(min = 5)
     private String email;
     @NotNull
     @NotEmpty
-    @Length(
-            min = 6
-    )
+    @Length(min = 6)
     private String senha;
 
     public AtualizacaoUsuarioForm() {

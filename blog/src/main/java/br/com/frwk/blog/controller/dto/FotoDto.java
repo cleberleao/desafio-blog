@@ -1,7 +1,9 @@
 package br.com.frwk.blog.controller.dto;
 
 import br.com.frwk.blog.modelo.Foto;
-
+/**
+ * @author CleberLeão
+ */
 public class FotoDto {
     private Long id;
     private String url;

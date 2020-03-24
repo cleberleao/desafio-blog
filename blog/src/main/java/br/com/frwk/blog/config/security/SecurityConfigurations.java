@@ -15,7 +15,9 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import br.com.frwk.blog.repository.UsuarioRepository;
-
+/**
+ * @author CleberLeão
+ */
 @EnableWebSecurity
 @Configuration
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
@@ -28,22 +30,34 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
 	public SecurityConfigurations() {
 	}
-
+	@Override
 	@Bean
 	protected AuthenticationManager authenticationManager() throws Exception {
 		return super.authenticationManager();
 	}
-
+	//Configuracoes de autenticacao
+	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.userDetailsService(this.autenticacaoService).passwordEncoder(new BCryptPasswordEncoder());
 	}
-
+	//Configuracoes de autorizacao
+	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		((HttpSecurity)((HttpSecurity)((HttpSecurity)((AuthorizedUrl)((AuthorizedUrl)((AuthorizedUrl)((AuthorizedUrl)((AuthorizedUrl)((AuthorizedUrl)http.authorizeRequests().antMatchers(HttpMethod.GET, new String[]{"/topicos"})).permitAll().antMatchers(HttpMethod.GET, new String[]{"/topicos/*"})).permitAll().antMatchers(HttpMethod.POST, new String[]{"/autentica", "/usuarios"})).permitAll().antMatchers(HttpMethod.GET, new String[]{"/actuator/**"})).permitAll().antMatchers(HttpMethod.GET, new String[]{"/"})).permitAll().anyRequest()).authenticated().and()).csrf().disable()).sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()).addFilterBefore(new AutenticacaoViaTokenFilter(this.tokenService, this.usuarioRepository), UsernamePasswordAuthenticationFilter.class);
+		http.authorizeRequests()
+				.antMatchers(HttpMethod.GET, "/topicos").permitAll()
+				.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
+				.antMatchers(HttpMethod.POST, "/autentica","/usuarios").permitAll()
+				.antMatchers(HttpMethod.GET, "/actuator/**", "/").permitAll()
+				.anyRequest().authenticated()
+				.and().csrf().disable()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+				.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class);
 	}
 
+	//Configuracoes de recursos estaticos(js, css, imagens, etc.)
+	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers(new String[]{"/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**", "/**.css", "/**.js", "/assets/**"});
+		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**", "/**.css", "/**.js", "/assets/**");
 	}
 }
 

@@ -3,7 +3,9 @@ package br.com.frwk.blog.controller.dto;
 import java.time.LocalDateTime;
 
 import br.com.frwk.blog.modelo.Resposta;
-
+/**
+ * @author CleberLeão
+ */
 public class RespostaDto {
 	private Long id;
 	private String mensagem;

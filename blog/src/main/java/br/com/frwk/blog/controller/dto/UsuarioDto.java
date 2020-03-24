@@ -5,7 +5,9 @@ import br.com.frwk.blog.modelo.Usuario;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * @author CleberLeão
+ */
 public class UsuarioDto {
     private Long id;
     private String nome;

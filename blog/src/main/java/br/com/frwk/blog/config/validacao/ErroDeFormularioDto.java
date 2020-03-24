@@ -1,5 +1,7 @@
 package br.com.frwk.blog.config.validacao;
-
+/**
+ * @author CleberLeão
+ */
 public class ErroDeFormularioDto {
 	
 	private String campo;

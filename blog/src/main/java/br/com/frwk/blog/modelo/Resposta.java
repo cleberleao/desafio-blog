@@ -6,13 +6,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-
+/**
+ * @author CleberLeão
+ */
 @Entity
 public class Resposta {
 	@Id
-	@GeneratedValue(
-			strategy = GenerationType.IDENTITY
-	)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String mensagem;
 	@ManyToOne
@@ -24,14 +24,14 @@ public class Resposta {
 
 	public Resposta() {
 	}
-
+	@Override
 	public int hashCode() {
-		int prime = true;
+		final int prime = 31;
 		int result = 1;
-		int result = 31 * result + (this.id == null ? 0 : this.id.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;

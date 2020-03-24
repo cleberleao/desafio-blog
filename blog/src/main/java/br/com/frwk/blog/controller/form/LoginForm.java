@@ -1,7 +1,9 @@
 package br.com.frwk.blog.controller.form;
 
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-
+/**
+ * @author CleberLeão
+ */
 public class LoginForm {
 
 	private String email;

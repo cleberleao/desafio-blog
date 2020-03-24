@@ -8,7 +8,9 @@ import java.util.stream.Collectors;
 
 import br.com.frwk.blog.modelo.StatusTopico;
 import br.com.frwk.blog.modelo.Topico;
-
+/**
+ * @author CleberLeão
+ */
 public class DetalhesDoTopicoDto {
 	private Long id;
 	private String titulo;
@@ -25,8 +27,8 @@ public class DetalhesDoTopicoDto {
 		this.dataCriacao = topico.getDataCriacao();
 		this.nomeAutor = topico.getAutor().getNome();
 		this.status = topico.getStatus();
-		this.respostas = new ArrayList();
-		this.respostas.addAll((Collection)topico.getRespostas().stream().map(RespostaDto::new).collect(Collectors.toList()));
+		this.respostas = new ArrayList<>();
+		this.respostas.addAll(topico.getRespostas().stream().map(RespostaDto::new).collect(Collectors.toList()));
 	}
 
 	public Long getId() {

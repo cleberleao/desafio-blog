@@ -1,5 +1,7 @@
 package br.com.frwk.blog.controller.dto;
-
+/**
+ * @author CleberLeão
+ */
 public class TokenDto {
 
 	private String token;

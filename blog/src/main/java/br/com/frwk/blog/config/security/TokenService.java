@@ -10,7 +10,9 @@ import br.com.frwk.blog.modelo.Usuario;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-
+/**
+ * @author CleberLeão
+ */
 @Service
 public class TokenService {
 	@Value("${blog.jwt.expiration}")
@@ -25,20 +27,25 @@ public class TokenService {
 		Usuario logado = (Usuario)authentication.getPrincipal();
 		Date hoje = new Date();
 		Date dataExpiracao = new Date(hoje.getTime() + Long.parseLong(this.expiration));
-		return Jwts.builder().setIssuer("API do Blog da Framework").setSubject(logado.getId().toString()).setIssuedAt(hoje).setExpiration(dataExpiracao).signWith(SignatureAlgorithm.HS256, this.secret).compact();
+		return Jwts.builder()
+				.setIssuer("API do Blog da Framework")
+				.setSubject(logado.getId().toString())
+				.setIssuedAt(hoje).setExpiration(dataExpiracao)
+				.signWith(SignatureAlgorithm.HS256, this.secret)
+				.compact();
 	}
 
 	public boolean tokenEhValido(String token) {
 		try {
 			Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token);
 			return true;
-		} catch (Exception var3) {
+		} catch (Exception e) {
 			return false;
 		}
 	}
 
 	public Long getIdUsuario(String token) {
-		Claims claims = (Claims)Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
+		Claims claims = Jwts.parser().setSigningKey(this.secret).parseClaimsJws(token).getBody();
 		return Long.parseLong(claims.getSubject());
 	}
 }

@@ -7,7 +7,9 @@ import org.hibernate.validator.constraints.Length;
 
 import br.com.frwk.blog.modelo.Topico;
 import br.com.frwk.blog.repository.TopicoRepository;
-
+/**
+ * @author CleberLeão
+ */
 public class AtualizacaoTopicoForm {
 	
 	@NotNull @NotEmpty @Length(min = 5)

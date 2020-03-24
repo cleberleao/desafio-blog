@@ -13,7 +13,9 @@ import org.springframework.web.filter.OncePerRequestFilter;
 
 import br.com.frwk.blog.modelo.Usuario;
 import br.com.frwk.blog.repository.UsuarioRepository;
-
+/**
+ * @author CleberLeão
+ */
 public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 	private TokenService tokenService;
 	private UsuarioRepository repository;
@@ -22,7 +24,7 @@ public class AutenticacaoViaTokenFilter extends OncePerRequestFilter {
 		this.tokenService = tokenService;
 		this.repository = repository;
 	}
-
+	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
 		String token = this.recuperarToken(request);
 		boolean valido = this.tokenService.tokenEhValido(token);

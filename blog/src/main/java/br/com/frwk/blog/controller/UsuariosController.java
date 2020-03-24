@@ -22,7 +22,9 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
+/**
+ * @author CleberLeão
+ */
 @CrossOrigin({"*"})
 @RestController
 @RequestMapping({"/usuarios"})
@@ -42,10 +44,7 @@ public class UsuariosController {
 
     @PostMapping
     @Transactional
-    @CacheEvict(
-            value = {"listaDeUsuarios"},
-            allEntries = true
-    )
+    @CacheEvict(value = {"listaDeUsuarios"}, allEntries = true)
     public ResponseEntity cadastrar(@RequestBody @Valid UsuarioForm form) {
         Usuario usuario = form.cadUsuario(form);
         this.usuarioRepository.save(usuario);
@@ -60,10 +59,7 @@ public class UsuariosController {
 
     @PutMapping({"/{id}"})
     @Transactional
-    @CacheEvict(
-            value = {"listaDeUsuarios"},
-            allEntries = true
-    )
+    @CacheEvict(value = {"listaDeUsuarios"}, allEntries = true)
     public ResponseEntity<UsuarioDto> atualizar(@PathVariable Long id, @RequestBody @Valid AtualizacaoUsuarioForm form) {
         Optional<Usuario> optional = this.usuarioRepository.findById(id);
         if (optional.isPresent()) {
@@ -76,10 +72,7 @@ public class UsuariosController {
 
     @DeleteMapping({"/{id}"})
     @Transactional
-    @CacheEvict(
-            value = {"listaDeUsuarios"},
-            allEntries = true
-    )
+    @CacheEvict(value = {"listaDeUsuarios"}, allEntries = true)
     public ResponseEntity<?> remover(@PathVariable Long id) {
         Optional<Usuario> optional = this.usuarioRepository.findById(id);
         if (optional.isPresent()) {

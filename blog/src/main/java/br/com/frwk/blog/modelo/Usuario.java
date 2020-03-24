@@ -3,15 +3,19 @@ package br.com.frwk.blog.modelo;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
-
+/**
+ * @author CleberLeão
+ */
 @Entity
 public class Usuario implements UserDetails {
 	private static final long serialVersionUID = 1L;
@@ -30,14 +34,14 @@ public class Usuario implements UserDetails {
 
 	public Usuario() {
 	}
-
+	@Override
 	public int hashCode() {
-		int prime = true;
+		final int prime = 31;
 		int result = 1;
-		int result = 31 * result + (this.id == null ? 0 : this.id.hashCode());
+		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		return result;
 	}
-
+	@Override
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
@@ -90,31 +94,31 @@ public class Usuario implements UserDetails {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
+	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		return this.perfis;
 	}
-
+	@Override
 	public String getPassword() {
 		return this.senha;
 	}
-
+	@Override
 	public String getUsername() {
 		return this.email;
 	}
-
+	@Override
 	public boolean isAccountNonExpired() {
 		return true;
 	}
-
+	@Override
 	public boolean isAccountNonLocked() {
 		return true;
 	}
-
+	@Override
 	public boolean isCredentialsNonExpired() {
 		return true;
 	}
-
+	@Override
 	public boolean isEnabled() {
 		return true;
 	}

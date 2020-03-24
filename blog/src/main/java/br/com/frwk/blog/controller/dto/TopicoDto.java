@@ -5,7 +5,9 @@ import br.com.frwk.blog.modelo.Topico;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * @author CleberLeão
+ */
 public class TopicoDto {
 	private Long id;
 	private String titulo;
