@@ -19,11 +19,13 @@ public class DetalhesDoTopicoDto {
 	private String nomeAutor;
 	private StatusTopico status;
 	private List<RespostaDto> respostas;
+	private List<FotoDto> fotos;
 
 	public DetalhesDoTopicoDto(Topico topico) {
 		this.id = topico.getId();
 		this.titulo = topico.getTitulo();
 		this.mensagem = topico.getMensagem();
+		this.fotos.addAll(topico.getFotos().stream().map(FotoDto::new).collect(Collectors.toList()));
 		this.dataCriacao = topico.getDataCriacao();
 		this.nomeAutor = topico.getAutor().getNome();
 		this.status = topico.getStatus();

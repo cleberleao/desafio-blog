@@ -1,5 +1,6 @@
 package br.com.frwk.blog.controller.form;
 
+import br.com.frwk.blog.modelo.Foto;
 import br.com.frwk.blog.modelo.Post;
 import br.com.frwk.blog.modelo.Topico;
 import br.com.frwk.blog.repository.PostRepository;
@@ -22,6 +23,8 @@ public class TopicoForm {
 	@NotEmpty
 	private String nomePost;
 
+	private Foto foto;
+
 	public TopicoForm() {
 	}
 
@@ -36,6 +39,9 @@ public class TopicoForm {
 	public void setNomePost(String nomePost) {
 		this.nomePost = nomePost;
 	}
+
+	public void setFoto(Foto foto) { this.foto = foto; }
+
 
 	public Topico converter(PostRepository cursoRepository) {
 		Post post = cursoRepository.findByNome(this.nomePost);
