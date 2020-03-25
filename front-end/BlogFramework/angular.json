@@ -120,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "BlogFramework"
+    }
+  },
+  "defaultProject": "BlogFramework",
+  "cli": {
+    "analytics": "a8fb81c1-9bcb-4c8d-ac07-38e8777369fc"
+  }
 }

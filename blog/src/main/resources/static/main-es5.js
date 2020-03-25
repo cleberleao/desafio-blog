@@ -51,7 +51,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"app\">\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\">Blog Framework</a>\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\n      <li class=\"nav-item\">\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Dashboard</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderator Dashboard</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/user\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">Usuario</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Cadastrar</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ username }}</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div class=\"container\">\n    <router-outlet></router-outlet>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div id=\"app\">\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\"><img src=\"../../src/assets/img/logo.png\" alt=\"Framework\"/> Blog Framework</a>\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\n      <li class=\"nav-item\">\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Dashboard</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderador Dashboard</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/usuarios\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">Usuario</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Cadastrar</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/autentica\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ nome }}</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div class=\"container\">\n    <img src=\"../../src/assets/img/logo.png\" alt=\"Framework\"/>\n    <router-outlet></router-outlet>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -151,7 +151,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isLoggedIn\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"username\">Email</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"username\"\n          [(ngModel)]=\"form.username\"\n          required\n          #username=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && username.invalid\"\n        >\n          Email é obrigatório!\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"password\"\n          [(ngModel)]=\"form.password\"\n          required\n          minlength=\"6\"\n          #password=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && password.invalid\"\n        >\n          <div *ngIf=\"password.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"password.errors.minlength\">\n            A senha deve cointer mais de 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">\n          Login\n        </button>\n      </div>\n      <div class=\"form-group\">\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && isLoginFailed\"\n        >\n          Login falhou: {{ errorMessage }}\n        </div>\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\n      Logado como {{ roles }}.\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isLoggedIn\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"email\"\n          [(ngModel)]=\"form.email\"\n          required\n          #email=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && email.invalid\"\n        >\n          Email é obrigatório!\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"senha\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"senha\"\n          [(ngModel)]=\"form.senha\"\n          required\n          minlength=\"6\"\n          #senha=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && senha.invalid\"\n        >\n          <div *ngIf=\"senha.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"senha.errors.minlength\">\n            A senha deve cointer mais de 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">\n          Login\n        </button>\n      </div>\n      <div class=\"form-group\">\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && isLoginFailed\"\n        >\n          Login falhou: {{ errorMessage }}\n        </div>\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\n      Logado como {{ roles }}.\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -171,7 +171,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"container\" *ngIf=\"currentUser; else loggedOut\">\n  <header class=\"jumbotron\">\n    <h3>\n      <strong>{{ currentUser.username }}</strong> Profile\n    </h3>\n  </header>\n  <p>\n    <strong>Token:</strong>\n    {{ currentUser.accessToken.substring(0, 20) }} ...\n    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}\n  </p>\n  <p>\n    <strong>Email:</strong>\n    {{ currentUser.email }}\n  </p>\n  <strong>Perfil de usuario:</strong>\n  <ul>\n    <li *ngFor=\"let role of currentUser.roles\">\n      {{ role }}\n    </li>\n  </ul>\n</div>\n\n<ng-template #loggedOut>\n  Faça Login.\n</ng-template>\n";
+    __webpack_exports__["default"] = "<div class=\"container\" *ngIf=\"currentUser; else loggedOut\">\n  <header class=\"jumbotron\">\n    <h3>\n      <strong>{{ currentUser.nome }}</strong> Profile\n    </h3>\n  </header>\n  <p>\n    <strong>Token:</strong>\n    {{ currentUser.accessToken.substring(0, 20) }} ...\n    {{ currentUser.accessToken.substr(currentUser.accessToken.length - 20) }}\n  </p>\n  <p>\n    <strong>Email:</strong>\n    {{ currentUser.email }}\n  </p>\n  <strong>Perfil de usuario:</strong>\n  <ul>\n    <li *ngFor=\"let role of currentUser.roles\">\n      {{ role }}\n    </li>\n  </ul>\n</div>\n\n<ng-template #loggedOut>\n  Faça Login.\n</ng-template>\n";
     /***/
   },
 
@@ -191,7 +191,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isSuccessful\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"username\">Nome</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"username\"\n          [(ngModel)]=\"form.username\"\n          required\n          minlength=\"3\"\n          maxlength=\"20\"\n          #username=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && username.invalid\">\n          <div *ngIf=\"username.errors.required\">Nome é obrigatório</div>\n          <div *ngIf=\"username.errors.minlength\">\n            Nome deve ser maior que 3 caracteres\n          </div>\n          <div *ngIf=\"username.errors.maxlength\">\n            Nome deve ser menor que 20 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input\n          type=\"email\"\n          class=\"form-control\"\n          name=\"email\"\n          [(ngModel)]=\"form.email\"\n          required\n          email\n          #email=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && email.invalid\">\n          <div *ngIf=\"email.errors.required\">Email é obrigatório</div>\n          <div *ngIf=\"email.errors.email\">\n            Email tem que ser um endereço válido\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"password\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"password\"\n          [(ngModel)]=\"form.password\"\n          required\n          minlength=\"6\"\n          #password=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && password.invalid\">\n          <div *ngIf=\"password.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"password.errors.minlength\">\n            Senha  deve ser maior que 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">Cadastrar</button>\n      </div>\n\n      <div class=\"alert alert-warning\" *ngIf=\"f.submitted && isSignUpFailed\">\n        Signup failed!<br />{{ errorMessage }}\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isSuccessful\">\n      Seu cadastro foi efetuado com successo!\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isSuccessful\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"nome\">Nome</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"nome\"\n          [(ngModel)]=\"form.nome\"\n          required\n          minlength=\"3\"\n          maxlength=\"20\"\n          #nome=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && nome.invalid\">\n          <div *ngIf=\"nome.errors.required\">Nome é obrigatório</div>\n          <div *ngIf=\"nome.errors.minlength\">\n            Nome deve ser maior que 3 caracteres\n          </div>\n          <div *ngIf=\"nome.errors.maxlength\">\n            Nome deve ser menor que 20 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input\n          type=\"email\"\n          class=\"form-control\"\n          name=\"email\"\n          [(ngModel)]=\"form.email\"\n          required\n          email\n          #email=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && email.invalid\">\n          <div *ngIf=\"email.errors.required\">Email é obrigatório</div>\n          <div *ngIf=\"email.errors.email\">\n            Email tem que ser um endereço válido\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"senha\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"senha\"\n          [(ngModel)]=\"form.senha\"\n          required\n          minlength=\"6\"\n          #senha=\"ngModel\"\n        />\n        <div class=\"alert-danger\" *ngIf=\"f.submitted && senha.invalid\">\n          <div *ngIf=\"senha.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"senha.errors.minlength\">\n            Senha  deve ser maior que 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">Cadastrar</button>\n      </div>\n\n      <div class=\"alert alert-warning\" *ngIf=\"f.submitted && isSignUpFailed\">\n        Cadastro falhou: {{ errorMessage }}\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isSuccessful\">\n      Seu cadastro foi efetuado com successo!\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -803,8 +803,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! ../_services/token-storage.service */
     "./src/app/_services/token-storage.service.ts");
 
-    var TOKEN_HEADER_KEY = 'Authorization'; // for Spring Boot back-end
-    // const TOKEN_HEADER_KEY = 'x-access-token';   // for Node.js Express back-end
+    var TOKEN_HEADER_KEY = 'Authorization';
 
     var AuthInterceptor =
     /*#__PURE__*/
@@ -822,11 +821,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           var token = this.token.getToken();
 
           if (token != null) {
-            // for Spring Boot back-end
             authReq = req.clone({
               headers: req.headers.set(TOKEN_HEADER_KEY, 'Bearer ' + token)
-            }); // for Node.js Express back-end
-            // authReq = req.clone({ headers: req.headers.set(TOKEN_HEADER_KEY, token) });
+            });
           }
 
           return next.handle(authReq);
@@ -890,6 +887,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     "./node_modules/@angular/common/fesm2015/http.js");
 
     var AUTH_API = 'http://localhost:8084/autentica';
+    var REG_API = 'http://localhost:8084/usuarios';
     var httpOptions = {
       headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]({
         'Content-Type': 'application/json'
@@ -909,17 +907,17 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "login",
         value: function login(credentials) {
           return this.http.post(AUTH_API, {
-            username: credentials.username,
-            password: credentials.password
+            email: credentials.email,
+            senha: credentials.senha
           }, httpOptions);
         }
       }, {
         key: "register",
         value: function register(user) {
-          return this.http.post(AUTH_API + 'signup', {
-            username: user.username,
+          return this.http.post(REG_API, {
+            nome: user.nome,
             email: user.email,
-            password: user.password
+            senha: user.senha
           }, httpOptions);
         }
       }]);
@@ -1057,7 +1055,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
 
-    var API_URL = 'http://localhost:8084';
+    var API_URL = 'http://localhost:8084/';
 
     var UserService =
     /*#__PURE__*/
@@ -1071,14 +1069,14 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(UserService, [{
         key: "getPublicContent",
         value: function getPublicContent() {
-          return this.http.get(API_URL + 'all', {
+          return this.http.get(API_URL + 'home', {
             responseType: 'text'
           });
         }
       }, {
         key: "getUserBoard",
         value: function getUserBoard() {
-          return this.http.get(API_URL + 'user', {
+          return this.http.get(API_URL + 'usuario', {
             responseType: 'text'
           });
         }
@@ -1197,7 +1195,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: 'home',
       component: _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]
     }, {
-      path: 'login',
+      path: 'autentica',
       component: _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
     }, {
       path: 'register',
@@ -1206,7 +1204,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: 'profile',
       component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_6__["ProfileComponent"]
     }, {
-      path: 'user',
+      path: 'usuarios',
       component: _board_user_board_user_component__WEBPACK_IMPORTED_MODULE_7__["BoardUserComponent"]
     }, {
       path: 'mod',
@@ -1311,7 +1309,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
             this.roles = user.roles;
             this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
             this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-            this.username = user.username;
+            this.nome = user.nome;
           }
         }
       }, {
@@ -2324,7 +2322,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\clebe\Downloads\angular-8-jwt-authentication-master\angular-8-jwt-authentication-master\src\main.ts */
+    /*! C:\Users\clebe\Documents\framework\desafio-blog\blog\front-end\BlogFramework\src\main.ts */
     "./src/main.ts");
     /***/
   }

@@ -353,7 +353,7 @@
   /***/
   function _(module, exports, __webpack_require__) {
     module.exports = __webpack_require__(
-    /*! C:\Users\clebe\Downloads\angular-8-jwt-authentication-master\angular-8-jwt-authentication-master\src\styles.css */
+    /*! C:\Users\clebe\Documents\framework\desafio-blog\blog\front-end\BlogFramework\src\styles.css */
     "./src/styles.css");
     /***/
   }

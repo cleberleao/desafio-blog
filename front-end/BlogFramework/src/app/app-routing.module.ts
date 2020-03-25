@@ -1,14 +1,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { BlogListComponent } from './components/blog-list/blog-list.component';
-import { BlogDetailsComponent } from './components/blog-details/blog-details.component';
-import { AddBlogComponent } from './components/add-blog/add-blog.component';
+
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { ProfileComponent } from './profile/profile.component';
+import { BoardUserComponent } from './board-user/board-user.component';
+import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
+import { BoardAdminComponent } from './board-admin/board-admin.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'blog', pathMatch: 'full' },
-  { path: 'blog', component: BlogListComponent },
-  { path: 'blog/:id', component: BlogDetailsComponent },
-  { path: 'add', component: AddBlogComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: 'profile', component: ProfileComponent },
+  { path: 'usuarios', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
