@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * @author CleberLeão
  */
-@CrossOrigin({"*"})
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping({"/autentica"})
 public class AutenticacaoController {

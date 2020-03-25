@@ -4,9 +4,12 @@ import br.com.frwk.blog.modelo.Foto;
 import br.com.frwk.blog.modelo.Post;
 import br.com.frwk.blog.modelo.Topico;
 import br.com.frwk.blog.repository.PostRepository;
+import org.hibernate.validator.constraints.Length;
+
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import org.hibernate.validator.constraints.Length;
+import java.util.List;
+
 /**
  * @author CleberLeão
  */
@@ -23,7 +26,7 @@ public class TopicoForm {
 	@NotEmpty
 	private String nomePost;
 
-	private Foto foto;
+	private List<Foto> fotos;
 
 	public TopicoForm() {
 	}
@@ -40,8 +43,7 @@ public class TopicoForm {
 		this.nomePost = nomePost;
 	}
 
-	public void setFoto(Foto foto) { this.foto = foto; }
-
+	public void setFotos() { this.fotos = fotos; }
 
 	public Topico converter(PostRepository cursoRepository) {
 		Post post = cursoRepository.findByNome(this.nomePost);

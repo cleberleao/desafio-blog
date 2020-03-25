@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 /**
  * @author CleberLeão
  */
-@CrossOrigin({"*"})
+@CrossOrigin(origins = "http://localhost:4200")
 @Controller
 public class HomeController {
 	public HomeController() {
