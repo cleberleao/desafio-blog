@@ -1,6 +1,6 @@
 {
-  "name": "angular8-jwt-auth",
-  "version": "0.0.0",
+  "name": "BlogFramework-Angular8",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

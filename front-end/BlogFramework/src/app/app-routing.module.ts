@@ -8,16 +8,22 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
+import { PostsListComponent } from './componentes/post-list/posts-list.component';
+import { AddPostComponent } from './componentes/add-post/add-post.component';
+import { PostDetailsComponent } from './componentes/post-details/post-details.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'usuarios', component: BoardUserComponent },
+  { path: 'user', component: BoardUserComponent },
   { path: 'mod', component: BoardModeratorComponent },
   { path: 'admin', component: BoardAdminComponent },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'posts', component: PostsListComponent },
+  { path: 'posts/:id', component: PostDetailsComponent },
+  { path: 'add', component: AddPostComponent }
 ];
 
 @NgModule({

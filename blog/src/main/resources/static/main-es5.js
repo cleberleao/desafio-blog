@@ -51,7 +51,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div id=\"app\">\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\"><img src=\"../../src/assets/img/logo.png\" alt=\"Framework\"/> Blog Framework</a>\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\n      <li class=\"nav-item\">\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\n        <a href=\"/admin\" class=\"nav-link\" routerLink=\"admin\">Admin Dashboard</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderador Dashboard</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/usuarios\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"user\">Usuario</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Cadastrar</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/autentica\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ nome }}</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div class=\"container\">\n    <img src=\"../../src/assets/img/logo.png\" alt=\"Framework\"/>\n    <router-outlet></router-outlet>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div id=\"app\">\n  <nav class=\"navbar navbar-expand navbar-dark bg-dark\">\n    <a href=\"#\" class=\"navbar-brand\"><img src=\"../assets/img/logo.png\" alt=\"Framework\"/> BLOG</a>\n    <ul class=\"navbar-nav mr-auto\" routerLinkActive=\"active\">\n      <li class=\"nav-item\">\n        <a href=\"/home\" class=\"nav-link\" routerLink=\"home\">Home </a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showAdminBoard\">\n        <a href=\"/add\" class=\"nav-link\" routerLink=\"add\">Publicar</a>\n      </li>\n      <li class=\"nav-item\" *ngIf=\"showModeratorBoard\">\n        <a href=\"/mod\" class=\"nav-link\" routerLink=\"mod\">Moderador Dashboard</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/post\" class=\"nav-link\" *ngIf=\"isLoggedIn\" routerLink=\"posts\">Publicações</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"!isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/register\" class=\"nav-link\" routerLink=\"register\">Cadastrar</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href=\"/login\" class=\"nav-link\" routerLink=\"login\">Login</a>\n      </li>\n    </ul>\n\n    <ul class=\"navbar-nav ml-auto\" *ngIf=\"isLoggedIn\">\n      <li class=\"nav-item\">\n        <a href=\"/profile\" class=\"nav-link\" routerLink=\"profile\">{{ nome }}</a>\n      </li>\n      <li class=\"nav-item\">\n        <a href class=\"nav-link\" (click)=\"logout()\">LogOut</a>\n      </li>\n    </ul>\n  </nav>\n\n  <div class=\"container\">\n\n    <router-outlet></router-outlet>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -116,6 +116,66 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/add-post/add-post.component.html":
+  /*!****************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/add-post/add-post.component.html ***!
+    \****************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentesAddPostAddPostComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"submit-form\">\n  <div *ngIf=\"!submitted\">\n    <h4>Criar Postagem</h4>\n    <div class=\"form-group\" >\n      <label id=\"add-post\" for=\"titulo\">Titulo</label>\n      <input\n        type=\"text\"\n        class=\"form-control\"\n        id=\"titulo\"\n        required\n        [(ngModel)]=\"post.titulo\"\n        name=\"titulo\"\n      />\n    </div>\n\n    <div class=\"form-group\">\n      <label for=\"mensagem\">Mensagem</label>\n      <input\n        class=\"form-control\"\n        id=\"mensagem\"\n        required\n        [(ngModel)]=\"post.mensagem\"\n        name=\"mensagem\"\n\n      />\n    </div>\n\n    <button (click)=\"savePost()\" class=\"btn btn-success\">Enviar</button>\n  </div>\n\n  <div *ngIf=\"submitted\">\n    <h4>Postado com successo!</h4>\n    <button class=\"btn btn-success\" (click)=\"newPost()\">Criar Novo Post</button>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-details/post-details.component.html":
+  /*!************************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-details/post-details.component.html ***!
+    \************************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentesPostDetailsPostDetailsComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div *ngIf=\"currentPost\" class=\"edit-form\">\n  <h4>Post</h4>\n  <form>\n    <div class=\"form-group\">\n      <label for=\"titulo\">Title</label>\n      <input\n        type=\"text\"\n        class=\"form-control\"\n        id=\"titulo\"\n        [(ngModel)]=\"currentPost.titulo\"\n        name=\"titulo\"\n      />\n    </div>\n    <div class=\"form-group\">\n      <label for=\"mensagem\">Mensagem</label>\n      <input\n        type=\"text\"\n        class=\"form-control\"\n        id=\"mensagem\"\n        [(ngModel)]=\"currentPost.mensagem\"\n        name=\"mensagem\"\n      />\n    </div>\n\n    <div class=\"form-group\">\n      <label><strong>Publicação:</strong></label>\n      {{ currentPost.published ? \"Published\" : \"Pending\" }}\n    </div>\n  </form>\n\n  <button\n    class=\"badge badge-primary mr-2\"\n    *ngIf=\"currentPost.published\"\n    (click)=\"updatePublished(false)\"\n  >\n    Retirar Publicação\n  </button>\n  <button\n    *ngIf=\"!currentPost.published\"\n    class=\"badge badge-primary mr-2\"\n    (click)=\"updatePublished(true)\"\n  >\n    Publicar\n  </button>\n\n  <button class=\"badge badge-danger mr-2\" (click)=\"deletePost()\">\n    Apagar\n  </button>\n\n  <button type=\"submit\" class=\"badge badge-success\" (click)=\"updatePost()\">\n    Editar\n  </button>\n  <p>{{ message }}</p>\n</div>\n\n<div *ngIf=\"!currentPost\">\n  <br />\n  <p>Não foi possivel acessar seu Post...</p>\n</div>\n";
+    /***/
+  },
+
+  /***/
+  "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-list/posts-list.component.html":
+  /*!*******************************************************************************************************!*\
+    !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-list/posts-list.component.html ***!
+    \*******************************************************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function node_modulesRawLoaderDistCjsJsSrcAppComponentesPostListPostsListComponentHtml(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = "<div class=\"list row\">\n  <div class=\"col-md-8\">\n    <div class=\"input-group mb-3\">\n      <input\n        type=\"text\"\n        class=\"form-control\"\n        placeholder=\"Pesquisar pelo título\"\n        [(ngModel)]=\"title\"\n      />\n      <div class=\"input-group-append\">\n        <button\n          class=\"btn btn-outline-secondary\"\n          type=\"button\"\n          (click)=\"searchTitle()\"\n        >\n          Procurar\n        </button>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-md-6\" id=\"list-post\">\n    <h4>Lista de Postagens</h4>\n    <p>Click para ver os detalhes do Post...</p>\n    <ul class=\"list-group\">\n      <li\n        class=\"list-group-item\"\n        *ngFor=\"let post of posts; let i = index\"\n        [class.active]=\"i == currentIndex\"\n        (click)=\"setActivePost(post, i)\"\n      >\n        {{ post.titulo }}\n      </li>\n    </ul>\n\n    <button class=\"m-3 btn btn-sm btn-danger\" (click)=\"removeAllPosts()\">\n      Remover Todos\n    </button>\n  </div>\n  <div class=\"col-md-6\">\n    <div *ngIf=\"currentPost\" id=\"list-post\">\n      <h4>POST</h4>\n      <div>\n        <label><strong>Titulo:</strong></label> {{ currentPost.titulo }}\n      </div>\n      <div>\n        <label><strong>Mensagem:</strong></label>\n        {{ currentPost.mensagem }}\n      </div>\n      <div>\n        <label><strong>Data do Post:</strong></label>\n        {{ currentPost.date }}\n      </div>\n\n      <a class=\"badge badge-warning\" href=\"/user/{{ currentPost.id }}\">\n        Editar\n      </a>\n    </div>\n\n    <div *ngIf=\"!currentPost\">\n      <br />\n\n    </div>\n  </div>\n</div>\n";
+    /***/
+  },
+
+  /***/
   "./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html":
   /*!********************************************************************************!*\
     !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/home/home.component.html ***!
@@ -151,7 +211,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /* harmony default export */
 
 
-    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isLoggedIn\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"email\"\n          [(ngModel)]=\"form.email\"\n          required\n          #email=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && email.invalid\"\n        >\n          Email é obrigatório!\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"senha\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"senha\"\n          [(ngModel)]=\"form.senha\"\n          required\n          minlength=\"6\"\n          #senha=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && senha.invalid\"\n        >\n          <div *ngIf=\"senha.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"senha.errors.minlength\">\n            A senha deve cointer mais de 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">\n          Login\n        </button>\n      </div>\n      <div class=\"form-group\">\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && isLoginFailed\"\n        >\n          Login falhou: {{ errorMessage }}\n        </div>\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\n      Logado como {{ roles }}.\n    </div>\n  </div>\n</div>\n";
+    __webpack_exports__["default"] = "<div class=\"col-md-12\">\n  <div class=\"card card-container\">\n    <img\n      id=\"profile-img\"\n      src=\"//ssl.gstatic.com/accounts/ui/avatar_2x.png\"\n      class=\"profile-img-card\"\n    />\n    <form\n      *ngIf=\"!isLoggedIn\"\n      name=\"form\"\n      (ngSubmit)=\"f.form.valid && onSubmit()\"\n      #f=\"ngForm\"\n      novalidate\n    >\n      <div class=\"form-group\">\n        <label for=\"email\">Email</label>\n        <input\n          type=\"text\"\n          class=\"form-control\"\n          name=\"email\"\n          [(ngModel)]=\"form.email\"\n          required\n          #email=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && email.invalid\"\n        >\n          Email é obrigatório!\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <label for=\"senha\">Senha</label>\n        <input\n          type=\"password\"\n          class=\"form-control\"\n          name=\"senha\"\n          [(ngModel)]=\"form.senha\"\n          required\n          minlength=\"6\"\n          #senha=\"ngModel\"\n        />\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && senha.invalid\"\n        >\n          <div *ngIf=\"senha.errors.required\">Senha é obrigatório</div>\n          <div *ngIf=\"senha.errors.minlength\">\n            A senha deve cointer mais de 6 caracteres\n          </div>\n        </div>\n      </div>\n      <div class=\"form-group\">\n        <button class=\"btn btn-primary btn-block\">\n          Login\n        </button>\n      </div>\n      <div class=\"form-group\">\n        <div\n          class=\"alert alert-danger\"\n          role=\"alert\"\n          *ngIf=\"f.submitted && isLoginFailed\"\n        >\n          Login falhou: {{ errorMessage }}\n        </div>\n      </div>\n    </form>\n\n    <div class=\"alert alert-success\" *ngIf=\"isLoggedIn\">\n      Logado como: {{ roles }}\n    </div>\n  </div>\n</div>\n";
     /***/
   },
 
@@ -1071,28 +1131,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         value: function getPublicContent() {
           return this.http.get(API_URL + 'home', {
             responseType: 'text'
-          });
+          }); //all
         }
       }, {
         key: "getUserBoard",
         value: function getUserBoard() {
-          return this.http.get(API_URL + 'usuario', {
+          return this.http.get(API_URL + 'topicos', {
             responseType: 'text'
-          });
+          }); //user
         }
       }, {
         key: "getModeratorBoard",
         value: function getModeratorBoard() {
-          return this.http.get(API_URL + 'mod', {
+          return this.http.get(API_URL + 'topicos', {
             responseType: 'text'
-          });
+          }); //mod
         }
       }, {
         key: "getAdminBoard",
         value: function getAdminBoard() {
-          return this.http.get(API_URL + 'admin', {
+          return this.http.get(API_URL + 'topicos', {
             responseType: 'text'
-          });
+          }); //admin chamr um form
         }
       }]);
 
@@ -1190,12 +1250,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _board_admin_board_admin_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(
     /*! ./board-admin/board-admin.component */
     "./src/app/board-admin/board-admin.component.ts");
+    /* harmony import */
+
+
+    var _componentes_post_list_posts_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(
+    /*! ./componentes/post-list/posts-list.component */
+    "./src/app/componentes/post-list/posts-list.component.ts");
+    /* harmony import */
+
+
+    var _componentes_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(
+    /*! ./componentes/add-post/add-post.component */
+    "./src/app/componentes/add-post/add-post.component.ts");
+    /* harmony import */
+
+
+    var _componentes_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(
+    /*! ./componentes/post-details/post-details.component */
+    "./src/app/componentes/post-details/post-details.component.ts");
 
     var routes = [{
       path: 'home',
       component: _home_home_component__WEBPACK_IMPORTED_MODULE_5__["HomeComponent"]
     }, {
-      path: 'autentica',
+      path: 'login',
       component: _login_login_component__WEBPACK_IMPORTED_MODULE_4__["LoginComponent"]
     }, {
       path: 'register',
@@ -1204,7 +1282,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: 'profile',
       component: _profile_profile_component__WEBPACK_IMPORTED_MODULE_6__["ProfileComponent"]
     }, {
-      path: 'usuarios',
+      path: 'user',
       component: _board_user_board_user_component__WEBPACK_IMPORTED_MODULE_7__["BoardUserComponent"]
     }, {
       path: 'mod',
@@ -1216,6 +1294,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       path: '',
       redirectTo: 'home',
       pathMatch: 'full'
+    }, {
+      path: 'posts',
+      component: _componentes_post_list_posts_list_component__WEBPACK_IMPORTED_MODULE_10__["PostsListComponent"]
+    }, {
+      path: 'posts/:id',
+      component: _componentes_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_12__["PostDetailsComponent"]
+    }, {
+      path: 'add',
+      component: _componentes_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_11__["AddPostComponent"]
     }];
 
     var AppRoutingModule = function AppRoutingModule() {
@@ -1297,6 +1384,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         this.isLoggedIn = false;
         this.showAdminBoard = false;
         this.showModeratorBoard = false;
+        this.showUserBoard = false;
       }
 
       _createClass(AppComponent, [{
@@ -1307,8 +1395,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
           if (this.isLoggedIn) {
             var user = this.tokenStorageService.getUser();
             this.roles = user.roles;
-            this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-            this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+            this.showAdminBoard = this.roles.includes('ADMIN');
+            this.showModeratorBoard = this.roles.includes('MODERADOR');
+            this.showUserBoard = this.roles.includes('USUARIO');
             this.nome = user.nome;
           }
         }
@@ -1450,13 +1539,31 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     var _helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(
     /*! ./_helpers/auth.interceptor */
     "./src/app/_helpers/auth.interceptor.ts");
+    /* harmony import */
+
+
+    var _componentes_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(
+    /*! ./componentes/add-post/add-post.component */
+    "./src/app/componentes/add-post/add-post.component.ts");
+    /* harmony import */
+
+
+    var _componentes_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(
+    /*! ./componentes/post-details/post-details.component */
+    "./src/app/componentes/post-details/post-details.component.ts");
+    /* harmony import */
+
+
+    var _componentes_post_list_posts_list_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(
+    /*! ./componentes/post-list/posts-list.component */
+    "./src/app/componentes/post-list/posts-list.component.ts");
 
     var AppModule = function AppModule() {
       _classCallCheck(this, AppModule);
     };
 
     AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
-      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"], _register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"], _board_admin_board_admin_component__WEBPACK_IMPORTED_MODULE_10__["BoardAdminComponent"], _board_user_board_user_component__WEBPACK_IMPORTED_MODULE_11__["BoardUserComponent"], _board_moderator_board_moderator_component__WEBPACK_IMPORTED_MODULE_12__["BoardModeratorComponent"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_13__["ProfileComponent"]],
+      declarations: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"], _login_login_component__WEBPACK_IMPORTED_MODULE_7__["LoginComponent"], _register_register_component__WEBPACK_IMPORTED_MODULE_8__["RegisterComponent"], _home_home_component__WEBPACK_IMPORTED_MODULE_9__["HomeComponent"], _board_admin_board_admin_component__WEBPACK_IMPORTED_MODULE_10__["BoardAdminComponent"], _board_user_board_user_component__WEBPACK_IMPORTED_MODULE_11__["BoardUserComponent"], _board_moderator_board_moderator_component__WEBPACK_IMPORTED_MODULE_12__["BoardModeratorComponent"], _profile_profile_component__WEBPACK_IMPORTED_MODULE_13__["ProfileComponent"], _componentes_add_post_add_post_component__WEBPACK_IMPORTED_MODULE_15__["AddPostComponent"], _componentes_post_details_post_details_component__WEBPACK_IMPORTED_MODULE_16__["PostDetailsComponent"], _componentes_post_list_posts_list_component__WEBPACK_IMPORTED_MODULE_17__["PostsListComponent"]],
       imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_3__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]],
       providers: [_helpers_auth_interceptor__WEBPACK_IMPORTED_MODULE_14__["authInterceptorProviders"]],
       bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
@@ -1770,6 +1877,442 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
   },
 
   /***/
+  "./src/app/componentes/add-post/add-post.component.css":
+  /*!*************************************************************!*\
+    !*** ./src/app/componentes/add-post/add-post.component.css ***!
+    \*************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentesAddPostAddPostComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".submit-form {\n  max-width: 50%;\n  margin: auto;\n  padding-top: 5%;\n}\n\n#add-post{\n  padding-top: 5%;\n}\n\n#mensagem{\n  width:100%;\n  height: 200px;\n  white-space: pre-wrap;\nword-wrap: break-word;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvYWRkLXBvc3QvYWRkLXBvc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGNBQWM7RUFDZCxZQUFZO0VBQ1osZUFBZTtBQUNqQjs7QUFFQTtFQUNFLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxVQUFVO0VBQ1YsYUFBYTtFQUNiLHFCQUFxQjtBQUN2QixxQkFBcUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9jb21wb25lbnRlcy9hZGQtcG9zdC9hZGQtcG9zdC5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLnN1Ym1pdC1mb3JtIHtcbiAgbWF4LXdpZHRoOiA1MCU7XG4gIG1hcmdpbjogYXV0bztcbiAgcGFkZGluZy10b3A6IDUlO1xufVxuXG4jYWRkLXBvc3R7XG4gIHBhZGRpbmctdG9wOiA1JTtcbn1cblxuI21lbnNhZ2Vte1xuICB3aWR0aDoxMDAlO1xuICBoZWlnaHQ6IDIwMHB4O1xuICB3aGl0ZS1zcGFjZTogcHJlLXdyYXA7XG53b3JkLXdyYXA6IGJyZWFrLXdvcmQ7XG59XG4iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/componentes/add-post/add-post.component.ts":
+  /*!************************************************************!*\
+    !*** ./src/app/componentes/add-post/add-post.component.ts ***!
+    \************************************************************/
+
+  /*! exports provided: AddPostComponent */
+
+  /***/
+  function srcAppComponentesAddPostAddPostComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "AddPostComponent", function () {
+      return AddPostComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../services/post.service */
+    "./src/app/services/post.service.ts");
+
+    var AddPostComponent =
+    /*#__PURE__*/
+    function () {
+      function AddPostComponent(postService) {
+        _classCallCheck(this, AddPostComponent);
+
+        this.postService = postService;
+        this.post = {
+          titulo: '',
+          mensagem: '',
+          nomePost: ''
+        };
+        this.submitted = false;
+      }
+
+      _createClass(AddPostComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {}
+      }, {
+        key: "savePost",
+        value: function savePost() {
+          var data = {
+            nomePost: this.post.titulo,
+            mensagem: this.post.mensagem,
+            titulo: this.post.titulo
+          };
+          this.postService.create(data).subscribe(function (response) {
+            console.log(response);
+          }, function (error) {
+            console.log(error);
+          });
+          this.submitted = true;
+        }
+      }, {
+        key: "newPost",
+        value: function newPost() {
+          this.submitted = false;
+          this.post = {
+            titulo: '',
+            mensagem: '',
+            nomePost: ''
+          };
+        }
+      }]);
+
+      return AddPostComponent;
+    }();
+
+    AddPostComponent.ctorParameters = function () {
+      return [{
+        type: _services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]
+      }];
+    };
+
+    AddPostComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-add-post',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./add-post.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/add-post/add-post.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./add-post.component.css */
+      "./src/app/componentes/add-post/add-post.component.css")).default]
+    })], AddPostComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/componentes/post-details/post-details.component.css":
+  /*!*********************************************************************!*\
+    !*** ./src/app/componentes/post-details/post-details.component.css ***!
+    \*********************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentesPostDetailsPostDetailsComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".edit-form {\n  max-width: 50%;\n  margin: auto;\n  padding-top: 5%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcG9zdC1kZXRhaWxzL3Bvc3QtZGV0YWlscy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsY0FBYztFQUNkLFlBQVk7RUFDWixlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcG9zdC1kZXRhaWxzL3Bvc3QtZGV0YWlscy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLmVkaXQtZm9ybSB7XG4gIG1heC13aWR0aDogNTAlO1xuICBtYXJnaW46IGF1dG87XG4gIHBhZGRpbmctdG9wOiA1JTtcbn1cbiJdfQ== */";
+    /***/
+  },
+
+  /***/
+  "./src/app/componentes/post-details/post-details.component.ts":
+  /*!********************************************************************!*\
+    !*** ./src/app/componentes/post-details/post-details.component.ts ***!
+    \********************************************************************/
+
+  /*! exports provided: PostDetailsComponent */
+
+  /***/
+  function srcAppComponentesPostDetailsPostDetailsComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PostDetailsComponent", function () {
+      return PostDetailsComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../services/post.service */
+    "./src/app/services/post.service.ts");
+    /* harmony import */
+
+
+    var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(
+    /*! @angular/router */
+    "./node_modules/@angular/router/fesm2015/router.js");
+
+    var PostDetailsComponent =
+    /*#__PURE__*/
+    function () {
+      function PostDetailsComponent(postService, route, router) {
+        _classCallCheck(this, PostDetailsComponent);
+
+        this.postService = postService;
+        this.route = route;
+        this.router = router;
+        this.currentPost = null;
+        this.message = '';
+      }
+
+      _createClass(PostDetailsComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.message = '';
+          this.getPost(this.route.snapshot.paramMap.get('id'));
+        }
+      }, {
+        key: "getPost",
+        value: function getPost(id) {
+          var _this4 = this;
+
+          this.postService.get(id).subscribe(function (data) {
+            _this4.currentPost = data;
+            console.log(data);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "updatePublished",
+        value: function updatePublished(status) {
+          var _this5 = this;
+
+          var data = {
+            titulo: this.currentPost.titulo,
+            mensagem: this.currentPost.mensagem,
+            published: status
+          };
+          this.postService.update(this.currentPost.id, data).subscribe(function (response) {
+            _this5.currentPost.published = status;
+            console.log(response);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "updatePost",
+        value: function updatePost() {
+          var _this6 = this;
+
+          this.postService.update(this.currentPost.id, this.currentPost).subscribe(function (response) {
+            console.log(response);
+            _this6.message = 'The post was updated successfully!';
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "deletePost",
+        value: function deletePost() {
+          var _this7 = this;
+
+          this.postService.delete(this.currentPost.id).subscribe(function (response) {
+            console.log(response);
+
+            _this7.router.navigate(['/posts']);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }]);
+
+      return PostDetailsComponent;
+    }();
+
+    PostDetailsComponent.ctorParameters = function () {
+      return [{
+        type: _services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"]
+      }, {
+        type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]
+      }];
+    };
+
+    PostDetailsComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-post-details',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./post-details.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-details/post-details.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./post-details.component.css */
+      "./src/app/componentes/post-details/post-details.component.css")).default]
+    })], PostDetailsComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/componentes/post-list/posts-list.component.css":
+  /*!****************************************************************!*\
+    !*** ./src/app/componentes/post-list/posts-list.component.css ***!
+    \****************************************************************/
+
+  /*! exports provided: default */
+
+  /***/
+  function srcAppComponentesPostListPostsListComponentCss(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony default export */
+
+
+    __webpack_exports__["default"] = ".list {\n  text-align: left;\n  max-width: 70%;\n  margin: auto;\n  padding-top: 5%;\n}\n\n#list-post{\n  padding-top: 2%;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY29tcG9uZW50ZXMvcG9zdC1saXN0L3Bvc3RzLWxpc3QuY29tcG9uZW50LmNzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTtFQUNFLGdCQUFnQjtFQUNoQixjQUFjO0VBQ2QsWUFBWTtFQUNaLGVBQWU7QUFDakI7O0FBRUE7RUFDRSxlQUFlO0FBQ2pCIiwiZmlsZSI6InNyYy9hcHAvY29tcG9uZW50ZXMvcG9zdC1saXN0L3Bvc3RzLWxpc3QuY29tcG9uZW50LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5saXN0IHtcbiAgdGV4dC1hbGlnbjogbGVmdDtcbiAgbWF4LXdpZHRoOiA3MCU7XG4gIG1hcmdpbjogYXV0bztcbiAgcGFkZGluZy10b3A6IDUlO1xufVxuXG4jbGlzdC1wb3N0e1xuICBwYWRkaW5nLXRvcDogMiU7XG59XG4iXX0= */";
+    /***/
+  },
+
+  /***/
+  "./src/app/componentes/post-list/posts-list.component.ts":
+  /*!***************************************************************!*\
+    !*** ./src/app/componentes/post-list/posts-list.component.ts ***!
+    \***************************************************************/
+
+  /*! exports provided: PostsListComponent */
+
+  /***/
+  function srcAppComponentesPostListPostsListComponentTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PostsListComponent", function () {
+      return PostsListComponent;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _services_post_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! ../../services/post.service */
+    "./src/app/services/post.service.ts");
+
+    var PostsListComponent =
+    /*#__PURE__*/
+    function () {
+      function PostsListComponent(postService) {
+        _classCallCheck(this, PostsListComponent);
+
+        this.postService = postService;
+        this.currentPost = null;
+        this.currentIndex = -1;
+        this.title = '';
+      }
+
+      _createClass(PostsListComponent, [{
+        key: "ngOnInit",
+        value: function ngOnInit() {
+          this.retrievePosts();
+        }
+      }, {
+        key: "retrievePosts",
+        value: function retrievePosts() {
+          var _this8 = this;
+
+          this.postService.getAll().subscribe(function (data) {
+            _this8.posts = data;
+            console.log(data);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "refreshList",
+        value: function refreshList() {
+          this.retrievePosts();
+          this.currentPost = null;
+          this.currentIndex = -1;
+        }
+      }, {
+        key: "setActivePost",
+        value: function setActivePost(post, index) {
+          this.currentPost = post;
+          this.currentIndex = index;
+        }
+      }, {
+        key: "removeAllPosts",
+        value: function removeAllPosts() {
+          var _this9 = this;
+
+          this.postService.deleteAll().subscribe(function (response) {
+            console.log(response);
+
+            _this9.retrievePosts();
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }, {
+        key: "searchTitle",
+        value: function searchTitle() {
+          var _this10 = this;
+
+          this.postService.findByTitle(this.title).subscribe(function (data) {
+            _this10.posts = data;
+            console.log(data);
+          }, function (error) {
+            console.log(error);
+          });
+        }
+      }]);
+
+      return PostsListComponent;
+    }();
+
+    PostsListComponent.ctorParameters = function () {
+      return [{
+        type: _services_post_service__WEBPACK_IMPORTED_MODULE_2__["PostService"]
+      }];
+    };
+
+    PostsListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+      selector: 'app-posts-list',
+      template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! raw-loader!./posts-list.component.html */
+      "./node_modules/raw-loader/dist/cjs.js!./src/app/componentes/post-list/posts-list.component.html")).default,
+      styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(
+      /*! ./posts-list.component.css */
+      "./src/app/componentes/post-list/posts-list.component.css")).default]
+    })], PostsListComponent);
+    /***/
+  },
+
+  /***/
   "./src/app/home/home.component.css":
   /*!*****************************************!*\
     !*** ./src/app/home/home.component.css ***!
@@ -1839,12 +2382,12 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(HomeComponent, [{
         key: "ngOnInit",
         value: function ngOnInit() {
-          var _this4 = this;
+          var _this11 = this;
 
           this.userService.getPublicContent().subscribe(function (data) {
-            _this4.content = data;
+            _this11.content = data;
           }, function (err) {
-            _this4.content = JSON.parse(err.error).message;
+            _this11.content = JSON.parse(err.error).message;
           });
         }
       }]);
@@ -1953,28 +2496,30 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         key: "ngOnInit",
         value: function ngOnInit() {
           if (this.tokenStorage.getToken()) {
-            this.isLoggedIn = true;
+            this.isLoggedIn = true; //this.nome = this.tokenStorage.getUser();
+            //console.log(this.nome);
+
             this.roles = this.tokenStorage.getUser().roles;
           }
         }
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this5 = this;
+          var _this12 = this;
 
           this.authService.login(this.form).subscribe(function (data) {
-            _this5.tokenStorage.saveToken(data.accessToken);
+            _this12.tokenStorage.saveToken(data.accessToken);
 
-            _this5.tokenStorage.saveUser(data);
+            _this12.tokenStorage.saveUser(data);
 
-            _this5.isLoginFailed = false;
-            _this5.isLoggedIn = true;
-            _this5.roles = _this5.tokenStorage.getUser().roles;
+            _this12.isLoginFailed = false;
+            _this12.isLoggedIn = true;
+            _this12.roles = _this12.tokenStorage.getUser().roles;
 
-            _this5.reloadPage();
+            _this12.reloadPage();
           }, function (err) {
-            _this5.errorMessage = err.error.message;
-            _this5.isLoginFailed = true;
+            _this12.errorMessage = err.error.message;
+            _this12.isLoginFailed = true;
           });
         }
       }, {
@@ -2179,15 +2724,15 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "onSubmit",
         value: function onSubmit() {
-          var _this6 = this;
+          var _this13 = this;
 
           this.authService.register(this.form).subscribe(function (data) {
             console.log(data);
-            _this6.isSuccessful = true;
-            _this6.isSignUpFailed = false;
+            _this13.isSuccessful = true;
+            _this13.isSignUpFailed = false;
           }, function (err) {
-            _this6.errorMessage = err.error.message;
-            _this6.isSignUpFailed = true;
+            _this13.errorMessage = err.error.message;
+            _this13.isSignUpFailed = true;
           });
         }
       }]);
@@ -2210,6 +2755,107 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       /*! ./register.component.css */
       "./src/app/register/register.component.css")).default]
     })], RegisterComponent);
+    /***/
+  },
+
+  /***/
+  "./src/app/services/post.service.ts":
+  /*!******************************************!*\
+    !*** ./src/app/services/post.service.ts ***!
+    \******************************************/
+
+  /*! exports provided: PostService */
+
+  /***/
+  function srcAppServicesPostServiceTs(module, __webpack_exports__, __webpack_require__) {
+    "use strict";
+
+    __webpack_require__.r(__webpack_exports__);
+    /* harmony export (binding) */
+
+
+    __webpack_require__.d(__webpack_exports__, "PostService", function () {
+      return PostService;
+    });
+    /* harmony import */
+
+
+    var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(
+    /*! tslib */
+    "./node_modules/tslib/tslib.es6.js");
+    /* harmony import */
+
+
+    var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(
+    /*! @angular/core */
+    "./node_modules/@angular/core/fesm2015/core.js");
+    /* harmony import */
+
+
+    var _angular_common_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(
+    /*! @angular/common/http */
+    "./node_modules/@angular/common/fesm2015/http.js");
+
+    var baseUrl = 'http://localhost:8084/topicos';
+
+    var PostService =
+    /*#__PURE__*/
+    function () {
+      function PostService(http) {
+        _classCallCheck(this, PostService);
+
+        this.http = http;
+      }
+
+      _createClass(PostService, [{
+        key: "getAll",
+        value: function getAll() {
+          return this.http.get(baseUrl);
+        }
+      }, {
+        key: "get",
+        value: function get(id) {
+          return this.http.get("".concat(baseUrl, "/").concat(id));
+        }
+      }, {
+        key: "create",
+        value: function create(data) {
+          return this.http.post(baseUrl, data);
+        }
+      }, {
+        key: "update",
+        value: function update(id, data) {
+          return this.http.put("".concat(baseUrl, "/").concat(id), data);
+        }
+      }, {
+        key: "delete",
+        value: function _delete(id) {
+          return this.http.delete("".concat(baseUrl, "/").concat(id));
+        }
+      }, {
+        key: "deleteAll",
+        value: function deleteAll() {
+          return this.http.delete(baseUrl);
+        }
+      }, {
+        key: "findByTitle",
+        value: function findByTitle(titulo) {
+          return this.http.get("".concat(baseUrl, "?titulo=").concat(titulo));
+        }
+      }]);
+
+      return PostService;
+    }();
+
+    PostService.ctorParameters = function () {
+      return [{
+        type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"]
+      }];
+    };
+
+    PostService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+      providedIn: 'root'
+    })], PostService);
     /***/
   },
 

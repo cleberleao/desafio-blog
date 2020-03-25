@@ -1,6 +1,7 @@
 package br.com.frwk.blog.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -15,6 +16,12 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 import br.com.frwk.blog.repository.UsuarioRepository;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+
+import java.util.Arrays;
+
 /**
  * @author CleberLeão
  */
@@ -48,7 +55,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
 				.antMatchers(HttpMethod.POST, "/autentica","/usuarios", "/").permitAll()
 				.antMatchers(HttpMethod.GET, "/actuator/**", "/").permitAll()
+				.antMatchers("/**").permitAll() //para testar pelo servidor http://localhost:4200 do angular tem que habilitar em produção desabilitar
 				.anyRequest().authenticated()
+				.and().httpBasic()
 				.and().csrf().disable()
 				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 				.and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, usuarioRepository), UsernamePasswordAuthenticationFilter.class);
@@ -58,7 +67,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**",
-				"/**.css", "/**.js", "/assets/**", "/upload/**", "/home", "/admin", "/mod", "/user", "/register", "/login", "/profile");
+				"/**.css", "/**.js", "/assets/**", "/upload/**");
 	}
 }
 

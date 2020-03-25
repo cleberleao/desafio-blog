@@ -1,18 +1,18 @@
 <div id="app">
   <nav class="navbar navbar-expand navbar-dark bg-dark">
-    <a href="#" class="navbar-brand"><img src="../assets/img/logo.png" alt="Framework"/> Blog Framework</a>
+    <a href="#" class="navbar-brand"><img src="../assets/img/logo.png" alt="Framework"/> BLOG</a>
     <ul class="navbar-nav mr-auto" routerLinkActive="active">
       <li class="nav-item">
         <a href="/home" class="nav-link" routerLink="home">Home </a>
       </li>
       <li class="nav-item" *ngIf="showAdminBoard">
-        <a href="/admin" class="nav-link" routerLink="admin">Admin Dashboard</a>
+        <a href="/add" class="nav-link" routerLink="add">Publicar</a>
       </li>
       <li class="nav-item" *ngIf="showModeratorBoard">
         <a href="/mod" class="nav-link" routerLink="mod">Moderador Dashboard</a>
       </li>
       <li class="nav-item">
-        <a href="/usuarios" class="nav-link" *ngIf="isLoggedIn" routerLink="user">Usuario</a>
+        <a href="/post" class="nav-link" *ngIf="isLoggedIn" routerLink="posts">Publicações</a>
       </li>
     </ul>
 

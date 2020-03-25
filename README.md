@@ -42,3 +42,5 @@ Entrar no navegador no endereço: http://localhost:8081
 4 - executar o projeto: ng serve
 
 5 - abrir o navegador no endereço: http://localhost:4200
+
+6 - no back-end tem que descometar a linha (// .antMatchers("/**").permitAll() //para testar pelo servidor http://localhost:4200 do angular tem que habilitar em produção desabilitar) na classe SecurityConfigurations
