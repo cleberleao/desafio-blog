@@ -14,10 +14,10 @@ public class HomeController {
 	}
 
 	@RequestMapping(
-			path = {"/home"}
+			path = {"/teste"}
 	)
 	@ResponseBody
 	public String hello() {
-		return "Pagina inicial do usuario";
+		return "Pagina inicial do Blog Framework";
 	}
 }

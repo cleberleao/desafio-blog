@@ -1115,7 +1115,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
     /*! @angular/common/http */
     "./node_modules/@angular/common/fesm2015/http.js");
 
-    var API_URL = 'http://localhost:8084/';
+    var API_URL = 'http://localhost:8084';
 
     var UserService =
     /*#__PURE__*/
@@ -1129,28 +1129,28 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       _createClass(UserService, [{
         key: "getPublicContent",
         value: function getPublicContent() {
-          return this.http.get(API_URL + 'home', {
+          return this.http.get(API_URL + '/', {
             responseType: 'text'
           }); //all
         }
       }, {
         key: "getUserBoard",
         value: function getUserBoard() {
-          return this.http.get(API_URL + 'topicos', {
+          return this.http.get(API_URL + '/topicos', {
             responseType: 'text'
           }); //user
         }
       }, {
         key: "getModeratorBoard",
         value: function getModeratorBoard() {
-          return this.http.get(API_URL + 'topicos', {
+          return this.http.get(API_URL + '/topicos', {
             responseType: 'text'
           }); //mod
         }
       }, {
         key: "getAdminBoard",
         value: function getAdminBoard() {
-          return this.http.get(API_URL + 'topicos', {
+          return this.http.get(API_URL + '/topicos', {
             responseType: 'text'
           }); //admin chamr um form
         }
@@ -2525,7 +2525,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       }, {
         key: "reloadPage",
         value: function reloadPage() {
-          window.location.reload();
+          window.location.href = '/';
         }
       }]);
 

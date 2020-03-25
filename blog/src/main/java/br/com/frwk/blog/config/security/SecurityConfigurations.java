@@ -55,7 +55,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 				.antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
 				.antMatchers(HttpMethod.POST, "/autentica","/usuarios", "/").permitAll()
 				.antMatchers(HttpMethod.GET, "/actuator/**", "/").permitAll()
-				.antMatchers("/**").permitAll() //para testar pelo servidor http://localhost:4200 do angular tem que habilitar em produção desabilitar
+				//.antMatchers("/**").permitAll() //para testar pelo servidor http://localhost:4200 do angular tem que habilitar em produção desabilitar
 				.anyRequest().authenticated()
 				.and().httpBasic()
 				.and().csrf().disable()
@@ -67,7 +67,7 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers("/**.html", "/v2/api-docs", "/webjars/**", "/configuration/**", "/swagger-resources/**",
-				"/**.css", "/**.js", "/assets/**", "/upload/**");
+				"/**.css", "/**.js", "/assets/**", "/upload/**", "/**");
 	}
 }
 

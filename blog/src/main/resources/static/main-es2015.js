@@ -556,22 +556,22 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const API_URL = 'http://localhost:8084/';
+const API_URL = 'http://localhost:8084';
 let UserService = class UserService {
     constructor(http) {
         this.http = http;
     }
     getPublicContent() {
-        return this.http.get(API_URL + 'home', { responseType: 'text' }); //all
+        return this.http.get(API_URL + '/', { responseType: 'text' }); //all
     }
     getUserBoard() {
-        return this.http.get(API_URL + 'topicos', { responseType: 'text' }); //user
+        return this.http.get(API_URL + '/topicos', { responseType: 'text' }); //user
     }
     getModeratorBoard() {
-        return this.http.get(API_URL + 'topicos', { responseType: 'text' }); //mod
+        return this.http.get(API_URL + '/topicos', { responseType: 'text' }); //mod
     }
     getAdminBoard() {
-        return this.http.get(API_URL + 'topicos', { responseType: 'text' }); //admin chamr um form
+        return this.http.get(API_URL + '/topicos', { responseType: 'text' }); //admin chamr um form
     }
 };
 UserService.ctorParameters = () => [
@@ -1356,7 +1356,7 @@ let LoginComponent = class LoginComponent {
         });
     }
     reloadPage() {
-        window.location.reload();
+        window.location.href = ('/');
     }
 };
 LoginComponent.ctorParameters = () => [
